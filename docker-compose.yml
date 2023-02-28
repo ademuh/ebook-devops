@@ -2,7 +2,7 @@ version: '3.8'
 services:
         ebook:
              build: .
-             container_name: fs-s1-cp1-contact-form
-             image: registry.mejik.xyz/ebook/fs-s1-cp1-contact-form
+             container_name: do-s2-gitlabci
+             image: registry.mejik.xyz/ebook/do-s2-gitlabci
              ports:
                      - 3016:3000
