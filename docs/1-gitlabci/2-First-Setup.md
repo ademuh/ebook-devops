@@ -24,6 +24,8 @@ Sekarang, kita bisa membuat project sesuai dengan kebutuhan kita, disini kita ak
 ```
 New Project > Create a Blank Project
 ```
+<img alt="image1" src={useBaseUrl('img/docs/5.png')} />
+
 <img alt="image1" src={useBaseUrl('img/docs/7.png')} />
 
 > Note : Jika kalian ingin menggunakan repository dari Github, bisa memilih **Import Project**
@@ -125,7 +127,7 @@ docker run -d --name gitlab-runner --restart always \
 docker run --rm -it gitlab/gitlab-runner register
 ```
 
-## 2.3. Source Code Management in Gitlab
+## 2.3. GitlabCI Pipeline
 
 Setelah melakukan first setup kita sudah memiliki sebuah *repository* Gitlab yang berisi project yang sudah kita buat, dengan fitur-fitur yang bisa kita gunakan, namun kita akan fokus ke fitur :
 - Repository
@@ -138,12 +140,15 @@ Pertama, kita bisa akses :
 CI/CD > Pipelines
 ```
 
+<img alt="image1" src={useBaseUrl('img/docs/6.png')} />
+
 Disini, kita bisa menggunakan template yang sudah ada atau membuat file baru. Proses ini akan membuat file `.gitlab-ci.yml` yang berisi pipeline untuk integrasi project.
 
 File tersebut bisa di cek didalam :
 ```
 Repository > Files
 ```
+<img alt="image1" src={useBaseUrl('img/docs/13.png')} />
 
 > Note : Jika kita menggunakan template sesuai dengan stack yang digunakan, maka isi file akan di generate sesuai dengan stacknya
 
@@ -185,9 +190,9 @@ deploy-job:
 
 Disini, kita bisa membuat atau merubah struktur dari pipeline sesuai dengan integrasi yang kita inginkan, struktur dari pipeline Gitlab adalah sebagai berikut :
 - stages : berisikan phase atau stage yang ingin dijalankan (Bisa diisi sesuai dengan kebutuhan)
-- Title (docker:image) : nama atau judul dari pipeline
+- Title (build-job, unit-test-job) : nama atau judul dari pipeline
 - stage : nama stage yang dijalankan (berdasarkan _Stages_)
-- image : nama image yang digunakan untuk menjalankan GitlabCI
+- image : nama image yang digunakan untuk menjalankan pipeline
 - services : nama service yang digunakan dari _image_ yang dijalankan
 - environment: menentukan enviornment saat ini (ex: Production & Staging)
 - before\_script : command yang dijalankan sebelum _script_ dijalankan (Declarative/Pre-pipeline)

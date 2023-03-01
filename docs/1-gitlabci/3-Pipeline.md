@@ -16,11 +16,11 @@ CI/CD > Pipelines
 ```
 Akan terdapat tampilan yang menunjukan proses pipeline sampai console log yang nantinya bisa kita akses untuk memeriksa error atau kegagalan dalam pipeline.
 
-[image here]
+<img alt="image1" src={useBaseUrl('img/docs/14.png')} />
 
-Jika kita ingin akses console log, kita tinggal klik stage yang ingin kita periksa.
+Jika kita ingin akses log/proses hasil pipeline, kita bisa akses dengan klik pipeline IDnya (`#79xxxxxx`).
 
-[image here]
+<img alt="image1" src={useBaseUrl('img/docs/15.png')} />
 
 Kita juga dapat membuat jadwal kapan pipeline kita berjalan menggunakan _cronjob_, yang bisa kita konfigurasi di :
 ```
@@ -29,7 +29,7 @@ CI/CD > Schedules
 
 [image here]
 
-## Using Docker
+## 3.2 Using Docker
 
 Untuk menggunakan fitur-fitur docker, kita harus memastikan kalau kita menggunakan _image_ dan _service_ untuk docker, jadi di dalam file `.gitlab-ci.yml` bisa kita tambahkan :
 ```
@@ -49,7 +49,7 @@ docker:test:
 
 Jika kita menjalankan pipeline, maka akan keluar output seperti ini :
 
-[image here]
+<img alt="image1" src={useBaseUrl('img/docs/16.png')} />
 
 Pada dasarnya, semua _command_ yang biasa kita gunakan saat kita menggunakan _docker_ dapat digunakan didalam pipeline, cukup menambahkan _command_ sesuai kebutuhan didalam fase _script_ atau _before\_script_
 
@@ -89,3 +89,5 @@ docker:test:
 
 ...
 ```
+
+Reference : https://docs.gitlab.com/ee/ci/docker/using_docker_images.html
