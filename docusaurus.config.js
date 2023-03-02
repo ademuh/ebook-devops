@@ -35,7 +35,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Full-Stack Stage 1 Chapter 1",
+        title: "DevOps Stage 2",
         logo: {
           alt: "DumbWays Logo",
           src: "img/logo.svg",

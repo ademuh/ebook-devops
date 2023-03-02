@@ -6,7 +6,7 @@ sidebar_position: 3
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Setelah kita berhasil setup semua yang dibutuhkan untuk _Terraform_, sekarang kita harus memahami konsep *Infrastructure-as-Code*.
+Setelah kita berhasil setup semua yang dibutuhkan untuk _`Terraform`_, sekarang kita harus memahami konsep *Infrastructure-as-Code*.
 
 **"*Infrastructure-as-Code* artinya segala bentuk infrastruktur (instance, docker atau tools lainnya) akan dibuat, dirancang dan dieksekusi dalam bentuk code."**
 
@@ -91,7 +91,7 @@ resource "aws_subnet" "web" {
 
 ### 3.1.3. Instance Server
 
-Setelah kita membuat semua kebutuhan untuk instance, sekarang kita bisa menggunakan resource `aws_instance` untuk membuat sebuah _Instance EC2_, seperti :
+Setelah kita membuat semua kebutuhan untuk instance, sekarang kita bisa menggunakan resource `aws_instance` untuk membuat sebuah _`Instance EC2`_, seperti :
 - CPU, RAM & Spesifikasi server
 - Network yang digunakan
 - Public IP

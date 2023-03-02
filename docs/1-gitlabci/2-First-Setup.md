@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## 2.1. Gitlab Account
 
-Disini, kita akan menggunakan GitlabCI untuk membuat sebuah pipeline seperti Jenkins, namun disini kita akan berfokus menggunakan produk SaaSnya.
+Disini, kita akan menggunakan _`GitlabCI`_ untuk membuat sebuah pipeline seperti _`Jenkins`_, namun disini kita akan berfokus menggunakan produk SaaSnya.
 
 Pertama, kita membuat akun di web Gitlab terlebih dahulu.
 ```
@@ -55,13 +55,22 @@ User Settings/Preferences > SSH Keys
 ```
 <img alt="image1" src={useBaseUrl('img/docs/8.png')} />
 
+:::tip
+
+Cukup gunakan SSH key yang sudah kalian generate sebelumnya, karena 1 key cukup untuk semua fitur!
+
+:::
 
 ### 2.2.2. Git Config & Remote
 Pastikan kita sudah menyesuaikan git config dan remote untuk mengarah ke repository Gitlab.
 
 <img alt="image1" src={useBaseUrl('img/docs/12.png')} />
 
-> Note : samakan dengan lokasi repository kita (Local/Cloud Server)
+:::note
+
+samakan `git config --list` di lokasi repository kita (Local/Cloud Server)
+
+::: 
 
 ### 2.2.3. Variables
 Password merupakan salah satu hal sensitif untuk dimasukkan kedalam repository atau source code kita, maka kita bisa memanfaatkan fitur Variables yang bisa di akses melalui :
@@ -82,50 +91,54 @@ Jika kita ingin menggunakan builder dari server kita sendiri (self-host), kita b
 
 <img alt="image1" src={useBaseUrl('img/docs/9.png')} />
 
-### Binary Install :
+#### Binary Install :
 1. Mengambil binary menggunakan curl dan dpkg
-```
-curl -LJO "https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_${arch}.deb"
-```
-```
-dpkg -i gitlab-runner_<arch>.deb
-```
+
+  ```
+  curl -LJO "https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_${arch}.deb"
+  ```
+  ```
+  dpkg -i gitlab-runner_<arch>.deb
+  ```
 
 2. Memberikan permission untuk execute
-```
-sudo chmod +x /usr/local/bin/gitlab-runner
-```
+
+  ```
+  sudo chmod +x /usr/local/bin/gitlab-runner
+  ```
 
 3. Membuat user untuk Gitlab-runner
-```
-sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
-```
+
+  ```
+  sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
+  ```
 
 4. Install dan jalankan sebagai service
-```
-sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
-```
-```
-sudo gitlab-runner start
-```
-```
-sudo gitlab-runner register
-```
 
-### On top Docker :
-```
-docker volume create gitlab-runner-config
-```
-```
-docker run -d --name gitlab-runner --restart always \
-    -p 8093:8093 \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v gitlab-runner-config:/etc/gitlab-runner \
-    gitlab/gitlab-runner:latest
-```
-```
-docker run --rm -it gitlab/gitlab-runner register
-```
+  ```
+  sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
+  ```
+  ```
+  sudo gitlab-runner start
+  ```
+  ```
+  sudo gitlab-runner register
+  ```
+
+#### On top Docker :
+  ```
+  docker volume create gitlab-runner-config
+  ```
+  ```
+  docker run -d --name gitlab-runner --restart always \
+      -p 8093:8093 \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      -v gitlab-runner-config:/etc/gitlab-runner \
+      gitlab/gitlab-runner:latest
+  ```
+  ```
+  docker run --rm -it gitlab/gitlab-runner register
+  ```
 
 ## 2.3. GitlabCI Pipeline
 

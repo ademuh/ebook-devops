@@ -2,7 +2,7 @@ version: '3.8'
 services:
         ebook:
              build: .
-             container_name: do-s2-gitlabci
-             image: registry.mejik.xyz/ebook/do-s2-gitlabci
+             container_name: do-s2-platformops
+             image: registry.mejik.xyz/ebook/do-s2-platformops
              ports:
                      - 3016:3000
