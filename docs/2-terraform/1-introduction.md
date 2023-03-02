@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## 1.1. Study Case Overview
 
-Sebagai _DevOps Engineer_, kita harus bisa "Berkerja semalas mungkin".
-
-_"Jangan salah paham ya."_
+:::tip
+Sebagai _DevOps Engineer_, kita harus bisa "Berkerja semalas mungkin". _Jangan salah paham ya._
+:::
 
 Memiliki sebuah alat/tool untuk mempercepat tugas kita akan menjadi kunci utama dalam efisiensi pekerjaan. Bayangkan kalau kalian harus membuat 100 server dalam semalam atau mengkonfigurasi 100 server tersebut agar bisa menggunakan _`Docker`_. Tentu hal ini akan memakan waktu yang cukup banyak jika kita lakukan secara manual, sehingga proses _Automation_ disini akan berperan sangat penting untuk kita sebagai _DevOps Engineer_.
 
