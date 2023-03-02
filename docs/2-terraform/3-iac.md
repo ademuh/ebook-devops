@@ -51,11 +51,14 @@ provider "aws" {
     secret_key = "zA82Lxxxxxxxx"
 }
 ```
+
+:::info
 - `provider "aws"` : nama provider yang kita gunakan (karena Offical dari HashiCorp, maka cukup nama providernya)
 - `version` : versi registry dari provider
 - `region` : Dari dokumentasi AWS, sesuai dengan region server yang diinginkan
 - `access_key` : Dibuat di Dashboard AWS
 - `secret_key` : Dibuat di Dashboard AWS
+:::
 
 ### 3.1.2. Network & IP Address
 
@@ -85,9 +88,11 @@ resource "aws_subnet" "web" {
 }
 ```
 
+:::info
 - `cidr_block` : menentukan IP dan network yang ingin digunakan
 - `tags` : opsional, untuk menambahkan label di dashboardnya nanti
 - `vpc_id` : mengarahkan ke _Virtual Private Connection_ (VPC) yang sudah dibuat (`aws_vpc.main.id`)
+:::
 
 ### 3.1.3. Instance Server
 
@@ -111,10 +116,12 @@ resource "aws_instance" "foobar" {
 }
 ```
 
+:::info
 - `ami` : Amazon Machine Images, kumpulan Operating System yang bisa digunakan untuk AWS EC2
 - `instance_type` : tipe instance yang ingin digunakan, diperoleh dari Dashboard AWS EC2
 - `associate_public_ip_address` : booelan, untuk memberikan IP public jika di set ke `true`
 - `subnet_id` : mengambil dari resource `aws_subnet` yang sudah dibuat (`aws_subnet.web.id`)
+:::
 
 Disini, kita sudah berhasil menyusun sebuah code _Terraform_ yang nantinya akan membuat :
 - 1 VM t2.micro dengan Ubuntu Server 20.04

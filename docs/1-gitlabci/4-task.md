@@ -13,7 +13,7 @@ Setelah mempelajari setup GitlabCI dari awal, tugas kalian adalah :
 - Merancang pipeline dengan step-step sebagai berikut :
   - Dockerize project kita menjadi sebuah image
   - Push image ke `hub.docker.com` menggunakan akun masing-masing
-  - Deploy aplikasi ke _Appserver_
+  - Deploy aplikasi ke _Appserver_ melalui SSH lalu menjalankan `docker-compse up`
 - Menggunakan _Variable_ :
   - Nama image docker
   - User dan password untuk Docker Hub
@@ -24,7 +24,7 @@ Setelah mempelajari setup GitlabCI dari awal, tugas kalian adalah :
 
 Jika teman-teman sudah menyelesaikan tugasnya, maka langkah selanjutnya adalah :
 - Membuat dokumentasi dan step-by-step guide pengerjaan tugas
-- Membuat _directory_ dengan nama "GitlabCI" di dalam repository tugas kalian
+- Membuat _directory_ dengan nama "Week 2 - GitlabCI" di dalam repository tugas kalian
 - Mempresentasikan hasil tugas pada jadwal yang tertera di Dashboard LMS (_Review & Scoring_)
 
 ## Project Management
@@ -37,6 +37,7 @@ Membuat sebuah Source Code Management di GitlabCI dengan pipeline dan fitur-fitu
 - [ ] Setup : Gitlab Account
 - [ ] Setup : SSH Keys, Variable & Repository
 - [ ] Setup : Pipeline
+- [ ] Setup : Schedule Job
 - [ ] Deploy : Aplikasi Web
 - [ ] Dokumentasi
 ```

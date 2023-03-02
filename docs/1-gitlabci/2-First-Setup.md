@@ -79,12 +79,14 @@ Project Settings > CI/CD > Variables
 ```
 <img alt="image1" src={useBaseUrl('img/docs/11.png')} />
 
+:::info
 Disini, kita bisa menambahkan variabel sesuai dengan kebutuhan.
-Ada beberapa bagian didalam sebuah variabel di GitlabCI, antara lain :
+
 - Key : Nama variabel, digunakan untuk memanggil variabel didalam pipeline
 - Value : Nilai variabel, isi dari _Key_ berupa _Value_
 - Type : Ada 2 pilihan, _Variable_ dan _File_
 - Environment Scope : Mengikuti setup dari project, membatasi _Variable_ bisa dipanggil di environment yang ditentukan.
+:::
 
 ### 2.2.4. Gitlab Runner
 Jika kita ingin menggunakan builder dari server kita sendiri (self-host), kita bisa menjalankan Gitlab-runner agar CI/CD berjalan di server kita sendiri.
@@ -126,9 +128,14 @@ Jika kita ingin menggunakan builder dari server kita sendiri (self-host), kita b
   ```
 
 #### On top Docker :
+1. Membuat Volume untuk menampung `gitlab-config-runner`
+ 
   ```
   docker volume create gitlab-runner-config
   ```
+
+2. Menjalankan image `gitlab/gitlab-runner`
+
   ```
   docker run -d --name gitlab-runner --restart always \
       -p 8093:8093 \
@@ -136,6 +143,9 @@ Jika kita ingin menggunakan builder dari server kita sendiri (self-host), kita b
       -v gitlab-runner-config:/etc/gitlab-runner \
       gitlab/gitlab-runner:latest
   ```
+
+3. Masuk kedalam *container* untuk menjalankan `gitlab-runner register`
+
   ```
   docker run --rm -it gitlab/gitlab-runner register
   ```
@@ -200,14 +210,13 @@ deploy-job:
     - echo "Application successfully deployed."
 ```
 
-
-Disini, kita bisa membuat atau merubah struktur dari pipeline sesuai dengan integrasi yang kita inginkan, struktur dari pipeline Gitlab adalah sebagai berikut :
-- stages : berisikan phase atau stage yang ingin dijalankan (Bisa diisi sesuai dengan kebutuhan)
-- Title (build-job, unit-test-job) : nama atau judul dari pipeline
-- stage : nama stage yang dijalankan (berdasarkan _Stages_)
-- image : nama image yang digunakan untuk menjalankan pipeline
-- services : nama service yang digunakan dari _image_ yang dijalankan
-- environment: menentukan enviornment saat ini (ex: Production & Staging)
-- before\_script : command yang dijalankan sebelum _script_ dijalankan (Declarative/Pre-pipeline)
-- script : command yang dijalankan di fase pipeline
-
+:::info
+- `stages` : berisikan phase atau stage yang ingin dijalankan (Bisa diisi sesuai dengan kebutuhan)
+- `Title` (build-job, unit-test-job) : nama atau judul dari pipeline
+- `stage` : nama stage yang dijalankan (berdasarkan _Stages_)
+- `image` : nama image yang digunakan untuk menjalankan pipeline
+- `services` : nama service yang digunakan dari _image_ yang dijalankan
+- `environment`: menentukan enviornment saat ini (ex: Production & Staging)
+- `before_script` : command yang dijalankan sebelum _script_ dijalankan (Declarative/Pre-pipeline)
+- `script` : command yang dijalankan di fase pipeline
+:::

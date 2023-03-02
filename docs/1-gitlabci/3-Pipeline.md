@@ -26,8 +26,7 @@ Kita juga dapat membuat jadwal kapan pipeline kita berjalan menggunakan _cronjob
 ```
 CI/CD > Schedules
 ```
-
-[image here]
+<img alt="image1" src={useBaseUrl('img/docs/17.png')} />
 
 ## 3.2 Using Docker
 
@@ -89,5 +88,6 @@ docker:test:
 
 ...
 ```
-
+:::note
 Reference : https://docs.gitlab.com/ee/ci/docker/using_docker_images.html
+:::

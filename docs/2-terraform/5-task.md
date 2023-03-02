@@ -37,7 +37,7 @@ Bisa di deploy, dan di destroy sebelum server digunakan.
 
 Jika teman-teman sudah menyelesaikan tugasnya, maka langkah selanjutnya adalah :
 - Membuat dokumentasi dan step-by-step guide pengerjaan tugas
-- Membuat _directory_ dengan nama "GitlabCI" di dalam repository tugas kalian
+- Membuat _directory_ dengan nama "Week 3 - Terraform" di dalam repository tugas kalian
 - Mempresentasikan hasil tugas pada jadwal yang tertera di Dashboard LMS (_Review & Scoring_)
 
 ## Project Management
